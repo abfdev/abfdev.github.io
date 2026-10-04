@@ -4,126 +4,313 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>abfdev | Developer</title>
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
     <style>
-        /* Import Fira Code for that true developer aesthetic */
-        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap');
+
+        :root {
+            color-scheme: dark;
+        }
 
         body {
             font-family: 'Fira Code', monospace;
-            background-color: #0d1117; /* GitHub Dark Theme background */
-            color: #c9d1d9; /* GitHub Dark text color */
+            background: #070b12;
+            color: #c9d1d9;
         }
 
-        /* Terminal blinking cursor effect */
         .cursor-blink {
             animation: blink 1s step-end infinite;
         }
+
         @keyframes blink {
             0%, 100% { opacity: 1; }
             50% { opacity: 0; }
         }
 
-        /* Subtle glowing selection color */
+        .glow {
+            box-shadow: 0 0 80px rgba(59, 130, 246, 0.18), 0 0 120px rgba(34, 197, 94, 0.08);
+        }
+
+        .grid-bg {
+            background-image:
+                linear-gradient(rgba(88, 166, 255, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(88, 166, 255, 0.08) 1px, transparent 1px);
+            background-size: 42px 42px;
+        }
+
         ::selection {
             background: #1f6feb;
             color: white;
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col items-center justify-center p-4 md:p-8 bg-gradient-to-br from-[#0d1117] to-[#161b22]">
+<body class="min-h-screen overflow-x-hidden bg-[#070b12]">
+    <main class="relative min-h-screen flex items-center justify-center px-4 py-10 md:px-8 grid-bg">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.20),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(34,197,94,0.14),transparent_35%)]"></div>
 
-    <div class="w-full max-w-4xl pt-10 pb-10">
-
-        <!-- IDE Window Header -->
-        <div class="flex items-center justify-between px-4 py-3 bg-[#161b22] rounded-t-lg border border-[#30363d] border-b-0 shadow-lg">
-            <div class="flex space-x-2">
-                <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
-                <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
-                <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
-            </div>
-            <div class="text-xs text-gray-400 font-medium tracking-widest">abfdev/index.js</div>
-            <div class="w-12"></div> <!-- Spacer to keep text centered -->
-        </div>
-
-        <!-- IDE Content Panel (The Code) -->
-        <div class="p-6 md:p-10 bg-[#0d1117] rounded-b-lg border border-[#30363d] shadow-2xl overflow-x-auto relative">
-
-            <!-- Comment Section -->
-            <div class="mb-8 select-none">
-                <p class="text-[#8b949e] mb-1">/**</p>
-                <p class="text-[#8b949e] mb-1">&nbsp;* Welcome to my corner of the web.</p>
-                <p class="text-[#8b949e] mb-1">&nbsp;* I build software, contribute to open source,</p>
-                <p class="text-[#8b949e] mb-1">&nbsp;* and turn coffee into code.</p>
-                <p class="text-[#8b949e] mb-4">&nbsp;*/</p>
-            </div>
-
-            <!-- Profile Object -->
-            <div class="mb-8 leading-loose">
-                <p>
-                    <span class="text-[#ff7b72]">const</span> <span class="text-[#79c0ff]">developer</span> <span class="text-white">=</span> {<br>
-                    &nbsp;&nbsp;name: <span class="text-[#a5d6ff]">'Faycal Ait Abbou'</span>,<br>
-                    &nbsp;&nbsp;handle: <span class="text-[#a5d6ff]">'@abfdev'</span>,<br>
-                    &nbsp;&nbsp;skills: [<span class="text-[#a5d6ff]">'JavaScript'</span>, <span class="text-[#a5d6ff]">'Python'</span>, <span class="text-[#a5d6ff]">'React'</span>, <span class="text-[#a5d6ff]">'Tailwind'</span>],<br>
-                    &nbsp;&nbsp;status: <span class="text-[#a5d6ff]">'Building awesome things'</span>,<br>
-                    &nbsp;&nbsp;contact: <span class="text-[#a5d6ff]">
-                        <a href="mailto:contact@example.com" class="hover:underline hover:text-white transition-colors border-b border-transparent hover:border-white">'contact@example.com'</a>
-                    </span><br>
-                    };
-                </p>
-            </div>
-
-            <!-- Projects Array -->
-            <div class="mb-10 leading-loose">
-                <p><span class="text-[#ff7b72]">const</span> <span class="text-[#79c0ff]">projects</span> <span class="text-white">=</span> [</p>
-                <div class="pl-4 md:pl-8 space-y-6 mt-2 text-sm md:text-base">
-
-                    <!-- Project 1 -->
-                    <div>
-                        <p class="text-white">{</p>
-                        <p class="pl-4">name: <span class="text-[#a5d6ff]">'Project One'</span>,</p>
-                        <p class="pl-4">description: <span class="text-[#a5d6ff]">'A brief description of this cool project.'</span>,</p>
-                        <p class="pl-4">link: <a href="https://github.com/abfdev/project-one" target="_blank" class="text-[#79c0ff] hover:underline hover:text-blue-300">'github.com/abfdev/project-one'</a></p>
-                        <p class="text-white">},</p>
-                    </div>
-
-                    <!-- Project 2 -->
-                    <div>
-                        <p class="text-white">{</p>
-                        <p class="pl-4">name: <span class="text-[#a5d6ff]">'Project Two'</span>,</p>
-                        <p class="pl-4">description: <span class="text-[#a5d6ff]">'Another repository showcasing my skills.'</span>,</p>
-                        <p class="pl-4">link: <a href="https://github.com/abfdev/project-two" target="_blank" class="text-[#79c0ff] hover:underline hover:text-blue-300">'github.com/abfdev/project-two'</a></p>
-                        <p class="text-white">}</p>
-                    </div>
-
+        <section class="relative w-full max-w-5xl">
+            <div class="mb-6 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+                <div>
+                    <p class="text-sm text-[#3fb950]">// personal portfolio</p>
+                    <h1 class="mt-2 text-3xl font-bold tracking-tight text-white md:text-5xl">
+                        abfdev<span class="text-[#58a6ff]">.github.io</span>
+                    </h1>
                 </div>
-                <p class="mt-2 text-white">];</p>
+                <a href="https://github.com/abfdev" target="_blank" class="inline-flex w-fit items-center gap-2 rounded-full border border-[#30363d] bg-[#0d1117]/80 px-4 py-2 text-sm text-[#c9d1d9] transition hover:border-[#58a6ff] hover:text-white">
+                    <span class="h-2 w-2 rounded-full bg-[#3fb950]"></span>
+                    github.com/abfdev
+                </a>
             </div>
 
-            <!-- Export -->
-            <div class="mb-12">
-                <p><span class="text-[#ff7b72]">export default</span> <span class="text-[#79c0ff]">developer</span>;</p>
+            <div class="glow overflow-hidden rounded-2xl border border-[#30363d] bg-[#0d1117]/95 backdrop-blur">
+                <!-- IDE Header -->
+                <div class="flex items-center justify-between border-b border-[#30363d] bg-[#161b22] px-4 py-3">
+                    <div class="flex space-x-2">
+                        <div class="h-3 w-3 rounded-full bg-[#ff5f56]"></div>
+                        <div class="h-3 w-3 rounded-full bg-[#ffbd2e]"></div>
+                        <div class="h-3 w-3 rounded-full bg-[#27c93f]"></div>
+                    </div>
+                    <div class="text-xs font-medium tracking-[0.25em] text-[#8b949e]">abfdev/about.js</div>
+                    <div class="w-12"></div>
+                </div>
+
+                <!-- Code Content -->
+                <div class="overflow-x-auto p-5 text-sm leading-8 md:p-10 md:text-base">
+                    <div class="mb-8 select-none text-[#8b949e]">
+                        <p>/**</p>
+                        <p>&nbsp;* Type a command in the terminal below.</p>
+                        <p>&nbsp;* Commands: about-me, my-project, contact-me</p>
+                        <p>&nbsp;*/</p>
+                    </div>
+
+                    <div class="mb-10">
+                        <p><span class="text-[#ff7b72]">const</span> <span class="text-[#79c0ff]">aboutMe</span> <span class="text-white">=</span> {</p>
+                        <p>&nbsp;&nbsp;name: <span class="text-[#a5d6ff]">'Faycal Ait Abbou'</span>,</p>
+                        <p>&nbsp;&nbsp;github: <span class="text-[#a5d6ff]">'@abfdev'</span>,</p>
+                        <p>&nbsp;&nbsp;email: <a href="mailto:abfaycaldev@gmail.com" class="text-[#a5d6ff] underline decoration-[#30363d] underline-offset-4 transition hover:text-white hover:decoration-[#58a6ff]">'abfaycaldev@gmail.com'</a>,</p>
+                        <p>&nbsp;&nbsp;mode: <span class="text-[#a5d6ff]">'coding'</span>,</p>
+                        <p>&nbsp;&nbsp;focus: [<span class="text-[#a5d6ff]">'Node.js'</span>, <span class="text-[#a5d6ff]">'GraphQL'</span>, <span class="text-[#a5d6ff]">'APIs'</span>, <span class="text-[#a5d6ff]">'Backend'</span>]</p>
+                        <p>};</p>
+                    </div>
+
+                    <div class="mb-10">
+                        <p><span class="text-[#ff7b72]">const</span> <span class="text-[#79c0ff]">project</span> <span class="text-white">=</span> {</p>
+                        <p>&nbsp;&nbsp;name: <span class="text-[#a5d6ff]">'GraphQL Server Example'</span>,</p>
+                        <p>&nbsp;&nbsp;description: <span class="text-[#a5d6ff]">'A Node.js GraphQL server example project.'</span>,</p>
+                        <p>&nbsp;&nbsp;repository: <a href="https://github.com/abfdev/graphql-server-example" target="_blank" class="text-[#79c0ff] underline decoration-[#30363d] underline-offset-4 transition hover:text-white hover:decoration-[#58a6ff]">'github.com/abfdev/graphql-server-example'</a></p>
+                        <p>};</p>
+                    </div>
+
+                    <!-- Interactive CLI Terminal -->
+                    <div id="terminal" class="mb-6 cursor-text rounded-xl border border-[#30363d] bg-[#010409] p-5 font-mono" onclick="focusTerminal()">
+                        <div class="flex items-center justify-between text-xs text-[#8b949e] pb-3 border-b border-[#21262d] select-none">
+                            <span>// interactive terminal</span>
+                            <span>bash</span>
+                        </div>
+
+                        <!-- Terminal Output (cleared on every new command) -->
+                        <div id="terminalOutput" class="space-y-3"></div>
+
+                        <!-- Prompt Line -->
+                        <div class="mt-3 flex items-center leading-relaxed">
+                            <span class="text-[#3fb950] font-bold select-none mr-2">➜</span>
+                            <span class="text-[#58a6ff] font-bold select-none mr-2">~</span>
+                            <span class="text-white font-medium select-none mr-2">node</span>
+                            <div class="flex items-center relative min-w-[200px] flex-grow">
+                                <span id="commandEcho" class="text-white whitespace-pre"></span>
+                                <span id="cursor" class="inline-block w-2.5 h-5 bg-[#c9d1d9] cursor-blink select-none"></span>
+                                <input id="commandInput" type="text" autocomplete="off" spellcheck="false" class="absolute inset-0 w-full h-full opacity-0 cursor-text p-0 m-0 border-none outline-none" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
+    </main>
 
-            <!-- Command line indicator -->
-            <div class="pt-6 border-t border-[#30363d] flex items-center text-[#8b949e]">
-                <span class="text-[#3fb950] font-bold mr-3">➜</span>
-                <span class="text-[#58a6ff] font-bold mr-3">~</span>
-                <span>node index.js</span>
-                <span class="inline-block w-2 h-5 bg-[#8b949e] ml-2 cursor-blink align-middle"></span>
-            </div>
-        </div>
+    <script>
+        const input = document.getElementById('commandInput');
+        const echo = document.getElementById('commandEcho');
+        const output = document.getElementById('terminalOutput');
+        const cursor = document.getElementById('cursor');
 
-        <!-- Bottom Social/GitHub Icon -->
-        <div class="mt-8 flex justify-center pb-12">
-            <a href="https://github.com/abfdev" target="_blank" class="text-[#8b949e] hover:text-white transition-all transform hover:scale-110" title="Visit my GitHub">
-                <svg class="w-9 h-9" fill="currentColor" viewBox="0 0 24 24">
-                    <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
-                </svg>
-            </a>
-        </div>
+        // CLI Project list for interactive selector
+        const projects = [
+            {
+                name: 'GraphQL Server Example',
+                desc: 'A Node.js GraphQL server example project',
+                url: 'https://github.com/abfdev/graphql-server-example'
+            },
+            {
+                name: 'GitHub Profile (@abfdev)',
+                desc: 'View all repositories and activity',
+                url: 'https://github.com/abfdev'
+            }
+        ];
 
-    </div>
+        let selectMode = false;
+        let selectedIndex = 0;
+
+        function focusTerminal() {
+            input.focus();
+        }
+
+        // Keep echo in sync with real input
+        input.addEventListener('input', () => {
+            if (!selectMode) {
+                echo.textContent = input.value;
+            }
+        });
+
+        function clearOutput() {
+            output.innerHTML = '';
+        }
+
+        function printAboutMe() {
+            output.innerHTML = `
+                <div class="rounded-lg border border-[#30363d] bg-[#0d1117] p-4 text-sm leading-relaxed mt-2">
+                    <p class="text-white font-semibold">Faycal Ait Abbou <span class="text-[#58a6ff]">(@abfdev)</span></p>
+                    <p class="text-[#c9d1d9] mt-1">Backend developer focused on clean APIs, Node.js, and GraphQL server architectures.</p>
+                    <p class="text-[#8b949e] mt-2">Type <span class="text-[#58a6ff]">my-project</span> to browse projects or <span class="text-[#58a6ff]">contact-me</span> to get in touch.</p>
+                </div>
+            `;
+        }
+
+        function renderProjectSelect() {
+            output.innerHTML = `
+                <div class="rounded-lg border border-[#30363d] bg-[#0d1117] p-4 text-sm mt-2 select-none">
+                    <div class="text-[#3fb950] font-medium">◇ ${projects.length} projects</div>
+                    <div class="text-[#c9d1d9] font-medium mt-1">◆ Which project do you want to open?</div>
+
+                    <div class="my-3 border-t border-[#21262d] pt-3 space-y-2">
+                        ${projects.map((p, idx) => {
+                            const isSelected = idx === selectedIndex;
+                            return `
+                                <div class="flex items-center gap-2 cursor-pointer ${isSelected ? 'text-white' : 'text-[#8b949e] hover:text-[#c9d1d9]'}" onclick="selectProjectAndOpen(${idx})">
+                                    <span class="${isSelected ? 'text-[#3fb950] font-bold' : 'text-[#484f58]'}">${isSelected ? '●' : '○'}</span>
+                                    <span class="${isSelected ? 'text-[#58a6ff] font-semibold underline' : ''}">${p.name}</span>
+                                    <span class="text-xs text-[#6e7681]">(${p.desc})</span>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+
+                    <div class="text-xs text-[#8b949e] pt-2 border-t border-[#21262d] flex items-center gap-3">
+                        <span><kbd class="px-1.5 py-0.5 rounded bg-[#161b22] border border-[#30363d] text-white">↑↓</kbd> move</span>
+                        <span><kbd class="px-1.5 py-0.5 rounded bg-[#161b22] border border-[#30363d] text-white">Enter</kbd> open in GitHub</span>
+                        <span><kbd class="px-1.5 py-0.5 rounded bg-[#161b22] border border-[#30363d] text-white">Esc</kbd> exit</span>
+                    </div>
+                </div>
+            `;
+        }
+
+        function selectProjectAndOpen(index) {
+            const target = projects[index];
+            window.open(target.url, '_blank');
+            selectMode = false;
+            output.innerHTML = `
+                <div class="text-sm mt-2 text-[#3fb950]">
+                    ✔ Opening <a href="${target.url}" target="_blank" class="underline text-[#58a6ff] hover:text-white">${target.name}</a> in new tab...
+                </div>
+            `;
+            input.value = '';
+            echo.textContent = '';
+            focusTerminal();
+        }
+
+        function printContact() {
+            output.innerHTML = `
+                <div class="rounded-lg border border-[#30363d] bg-[#0d1117] p-4 text-sm mt-2">
+                    <p class="text-white font-medium">📬 Contact:</p>
+                    <p class="mt-2">
+                        <a href="mailto:abfaycaldev@gmail.com" class="text-[#58a6ff] underline hover:text-white transition">abfaycaldev@gmail.com</a>
+                    </p>
+                </div>
+            `;
+        }
+
+        function printUnknown(cmd) {
+            output.innerHTML = `
+                <div class="text-sm mt-2 text-[#ff7b72]">
+                    command not found: <span class="text-white">${escapeHtml(cmd)}</span><br>
+                    <span class="text-[#8b949e]">available commands: <span class="text-[#58a6ff]">about-me</span>, <span class="text-[#58a6ff]">my-project</span>, <span class="text-[#58a6ff]">contact-me</span>, <span class="text-[#58a6ff]">clear</span></span>
+                </div>
+            `;
+        }
+
+        function escapeHtml(text) {
+            return text
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+
+        input.addEventListener('keydown', (e) => {
+            if (selectMode) {
+                if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    selectedIndex = (selectedIndex + 1) % projects.length;
+                    renderProjectSelect();
+                    return;
+                }
+                if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    selectedIndex = (selectedIndex - 1 + projects.length) % projects.length;
+                    renderProjectSelect();
+                    return;
+                }
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    selectProjectAndOpen(selectedIndex);
+                    return;
+                }
+                if (e.key === 'Escape') {
+                    e.preventDefault();
+                    selectMode = false;
+                    clearOutput();
+                    input.value = '';
+                    echo.textContent = '';
+                    return;
+                }
+                // If user types regular characters, exit selectMode
+                selectMode = false;
+            }
+
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                const cmd = input.value.trim();
+                input.value = '';
+                echo.textContent = '';
+
+                // Clean printed result on each command execution
+                clearOutput();
+
+                if (!cmd) {
+                    return;
+                }
+
+                if (cmd === 'about-me') {
+                    printAboutMe();
+                } else if (cmd === 'my-project' || cmd === 'projects') {
+                    selectMode = true;
+                    selectedIndex = 0;
+                    renderProjectSelect();
+                } else if (cmd === 'contact-me') {
+                    printContact();
+                } else if (cmd === 'clear') {
+                    clearOutput();
+                } else {
+                    printUnknown(cmd);
+                }
+            }
+        });
+
+        window.addEventListener('load', focusTerminal);
+    </script>
 </body>
 </html>
