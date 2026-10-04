@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>abfdev | Developer</title>
+    <title>abfdev | Fayçal Ait Abbou</title>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -73,7 +73,7 @@
                         <div class="h-3 w-3 rounded-full bg-[#ffbd2e]"></div>
                         <div class="h-3 w-3 rounded-full bg-[#27c93f]"></div>
                     </div>
-                    <div class="text-xs font-medium tracking-[0.25em] text-[#8b949e]">abfdev/about.js</div>
+                    <div class="text-xs font-medium tracking-[0.25em] text-[#8b949e]">abfdev/about.ts</div>
                     <div class="w-12"></div>
                 </div>
 
@@ -81,34 +81,48 @@
                 <div class="overflow-x-auto p-5 text-sm leading-8 md:p-10 md:text-base">
                     <div class="mb-8 select-none text-[#8b949e]">
                         <p>/**</p>
-                        <p>&nbsp;* Type a command in the terminal below.</p>
-                        <p>&nbsp;* Commands: about-me, my-project, contact-me</p>
+                        <p>&nbsp;* Fayçal Ait Abbou — Full-Stack Developer</p>
+                        <p>&nbsp;* Building polished, resilient web platforms and operational tools.</p>
+                        <p>&nbsp;* Commands in terminal: about-me, my-project, contact-me, clear</p>
                         <p>&nbsp;*/</p>
                     </div>
 
-                    <div class="mb-10">
-                        <p><span class="text-[#ff7b72]">const</span> <span class="text-[#79c0ff]">aboutMe</span> <span class="text-white">=</span> {</p>
-                        <p>&nbsp;&nbsp;name: <span class="text-[#a5d6ff]">'Faycal Ait Abbou'</span>,</p>
-                        <p>&nbsp;&nbsp;github: <span class="text-[#a5d6ff]">'@abfdev'</span>,</p>
-                        <p>&nbsp;&nbsp;email: <a href="mailto:abfaycaldev@gmail.com" class="text-[#a5d6ff] underline decoration-[#30363d] underline-offset-4 transition hover:text-white hover:decoration-[#58a6ff]">'abfaycaldev@gmail.com'</a>,</p>
-                        <p>&nbsp;&nbsp;mode: <span class="text-[#a5d6ff]">'coding'</span>,</p>
-                        <p>&nbsp;&nbsp;focus: [<span class="text-[#a5d6ff]">'Node.js'</span>, <span class="text-[#a5d6ff]">'GraphQL'</span>, <span class="text-[#a5d6ff]">'APIs'</span>, <span class="text-[#a5d6ff]">'Backend'</span>]</p>
+                    <!-- Developer Object -->
+                    <div class="mb-8 leading-relaxed">
+                        <p><span class="text-[#ff7b72]">export const</span> <span class="text-[#79c0ff]">developer</span> <span class="text-white">=</span> {</p>
+                        <p class="pl-4">name: <span class="text-[#a5d6ff]">'Fayçal Ait Abbou'</span>,</p>
+                        <p class="pl-4">role: <span class="text-[#a5d6ff]">'Full-Stack Developer'</span>,</p>
+                        <p class="pl-4">bio: <span class="text-[#a5d6ff]">'Building polished, resilient web platforms and operational tools.'</span>,</p>
+                        <p class="pl-4">github: <span class="text-[#a5d6ff]">'@abfdev'</span>,</p>
+                        <p class="pl-4">email: <a href="mailto:abfaycaldev@gmail.com" class="text-[#a5d6ff] underline decoration-[#30363d] underline-offset-4 transition hover:text-white hover:decoration-[#58a6ff]">'abfaycaldev@gmail.com'</a>,</p>
+                        <p class="pl-4">techStack: {</p>
+                        <p class="pl-8">languages: [<span class="text-[#a5d6ff]">'TypeScript'</span>, <span class="text-[#a5d6ff]">'JavaScript'</span>, <span class="text-[#a5d6ff]">'SQL'</span>, <span class="text-[#a5d6ff]">'HTML5/CSS3'</span>],</p>
+                        <p class="pl-8">frontend: [<span class="text-[#a5d6ff]">'Next.js'</span>, <span class="text-[#a5d6ff]">'React'</span>, <span class="text-[#a5d6ff]">'Tailwind CSS'</span>, <span class="text-[#a5d6ff]">'Shadcn UI'</span>, <span class="text-[#a5d6ff]">'Framer Motion'</span>],</p>
+                        <p class="pl-8">backend: [<span class="text-[#a5d6ff]">'Node.js'</span>, <span class="text-[#a5d6ff]">'Bun'</span>, <span class="text-[#a5d6ff]">'PostgreSQL'</span>, <span class="text-[#a5d6ff]">'Prisma'</span>, <span class="text-[#a5d6ff]">'GraphQL'</span>],</p>
+                        <p class="pl-8">tooling: [<span class="text-[#a5d6ff]">'Git'</span>, <span class="text-[#a5d6ff]">'Zod'</span>, <span class="text-[#a5d6ff]">'MCP Servers'</span>, <span class="text-[#a5d6ff]">'REST APIs'</span>]</p>
+                        <p class="pl-4">}</p>
                         <p>};</p>
                     </div>
 
-                    <div class="mb-10">
-                        <p><span class="text-[#ff7b72]">const</span> <span class="text-[#79c0ff]">project</span> <span class="text-white">=</span> {</p>
-                        <p>&nbsp;&nbsp;name: <span class="text-[#a5d6ff]">'GraphQL Server Example'</span>,</p>
-                        <p>&nbsp;&nbsp;description: <span class="text-[#a5d6ff]">'A Node.js GraphQL server example project.'</span>,</p>
-                        <p>&nbsp;&nbsp;repository: <a href="https://github.com/abfdev/graphql-server-example" target="_blank" class="text-[#79c0ff] underline decoration-[#30363d] underline-offset-4 transition hover:text-white hover:decoration-[#58a6ff]">'github.com/abfdev/graphql-server-example'</a></p>
+                    <!-- Project Object -->
+                    <div class="mb-10 leading-relaxed">
+                        <p><span class="text-[#ff7b72]">export const</span> <span class="text-[#79c0ff]">featuredProject</span> <span class="text-white">=</span> {</p>
+                        <p class="pl-4">name: <span class="text-[#a5d6ff]">'GraphQL Server Example'</span>,</p>
+                        <p class="pl-4">description: <span class="text-[#a5d6ff]">'A Node.js GraphQL server example project.'</span>,</p>
+                        <p class="pl-4">repository: <a href="https://github.com/abfdev/graphql-server-example" target="_blank" class="text-[#79c0ff] underline decoration-[#30363d] underline-offset-4 transition hover:text-white hover:decoration-[#58a6ff]">'github.com/abfdev/graphql-server-example'</a></p>
                         <p>};</p>
                     </div>
 
                     <!-- Interactive CLI Terminal -->
                     <div id="terminal" class="mb-6 cursor-text rounded-xl border border-[#30363d] bg-[#010409] p-5 font-mono" onclick="focusTerminal()">
                         <div class="flex items-center justify-between text-xs text-[#8b949e] pb-3 border-b border-[#21262d] select-none">
-                            <span>// interactive terminal</span>
-                            <span>bash</span>
+                            <div class="flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-[#58a6ff]">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z" />
+                                </svg>
+                                <span class="text-[#c9d1d9] font-medium">abfdev-app</span>
+                            </div>
+                            <span class="text-[#8b949e]">bash</span>
                         </div>
 
                         <!-- Terminal Output (cleared on every new command) -->
@@ -171,10 +185,39 @@
 
         function printAboutMe() {
             output.innerHTML = `
-                <div class="rounded-lg border border-[#30363d] bg-[#0d1117] p-4 text-sm leading-relaxed mt-2">
-                    <p class="text-white font-semibold">Faycal Ait Abbou <span class="text-[#58a6ff]">(@abfdev)</span></p>
-                    <p class="text-[#c9d1d9] mt-1">Backend developer focused on clean APIs, Node.js, and GraphQL server architectures.</p>
-                    <p class="text-[#8b949e] mt-2">Type <span class="text-[#58a6ff]">my-project</span> to browse projects or <span class="text-[#58a6ff]">contact-me</span> to get in touch.</p>
+                <div class="rounded-lg border border-[#30363d] bg-[#0d1117] p-5 text-sm leading-relaxed mt-2 space-y-4">
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-[#3fb950]">◇</span>
+                            <h3 class="text-white font-bold text-base">Fayçal Ait Abbou</h3>
+                            <span class="text-[#58a6ff] text-xs font-semibold px-2 py-0.5 rounded bg-[#1f6feb]/20 border border-[#388bfd]/30">Full-Stack Developer</span>
+                        </div>
+                        <p class="text-[#c9d1d9] mt-1 text-xs md:text-sm">Building polished, resilient web platforms and operational tools.</p>
+                    </div>
+
+                    <div class="border-t border-[#21262d] pt-3">
+                        <p class="text-white font-semibold text-xs tracking-wider uppercase mb-2 text-[#79c0ff]">🚀 What I Do</p>
+                        <ul class="space-y-1.5 text-xs md:text-sm text-[#8b949e]">
+                            <li>• Architect end-to-end web applications with <span class="text-white font-medium">Next.js (App Router)</span> and <span class="text-white font-medium">TypeScript</span>.</li>
+                            <li>• Craft component-driven interfaces using <span class="text-white font-medium">Tailwind CSS</span>, <span class="text-white font-medium">Shadcn UI</span>, and <span class="text-white font-medium">Framer Motion</span>.</li>
+                            <li>• Design type-safe data pipelines and schemas with <span class="text-white font-medium">Prisma</span>, <span class="text-white font-medium">Zod</span>, and <span class="text-white font-medium">PostgreSQL</span>.</li>
+                            <li>• Integrate developer tooling and local AI agents into modern development workflows.</li>
+                        </ul>
+                    </div>
+
+                    <div class="border-t border-[#21262d] pt-3">
+                        <p class="text-white font-semibold text-xs tracking-wider uppercase mb-2 text-[#3fb950]">🧰 Tech Stack</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs">
+                            <div><span class="text-[#8b949e]">Languages:</span> <span class="text-[#c9d1d9]">TypeScript, JavaScript, SQL, HTML5/CSS3</span></div>
+                            <div><span class="text-[#8b949e]">Frontend:</span> <span class="text-[#c9d1d9]">Next.js, React, Tailwind CSS, Shadcn UI</span></div>
+                            <div><span class="text-[#8b949e]">Backend & ORM:</span> <span class="text-[#c9d1d9]">Node.js, Bun, PostgreSQL, Prisma</span></div>
+                            <div><span class="text-[#8b949e]">Tooling:</span> <span class="text-[#c9d1d9]">Git, Zod, MCP Servers, RESTful APIs</span></div>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-[#21262d] pt-2 text-xs text-[#8b949e]">
+                        Type <span class="text-[#58a6ff]">my-project</span> to explore repositories or <span class="text-[#58a6ff]">contact-me</span> to connect.
+                    </div>
                 </div>
             `;
         }
@@ -225,8 +268,13 @@
             output.innerHTML = `
                 <div class="rounded-lg border border-[#30363d] bg-[#0d1117] p-4 text-sm mt-2">
                     <p class="text-white font-medium">📬 Contact:</p>
-                    <p class="mt-2">
-                        <a href="mailto:abfaycaldev@gmail.com" class="text-[#58a6ff] underline hover:text-white transition">abfaycaldev@gmail.com</a>
+                    <p class="mt-2 text-xs md:text-sm">
+                        <span class="text-[#8b949e]">Email:</span>
+                        <a href="mailto:abfaycaldev@gmail.com" class="text-[#58a6ff] underline hover:text-white transition ml-1">abfaycaldev@gmail.com</a>
+                    </p>
+                    <p class="mt-1 text-xs md:text-sm">
+                        <span class="text-[#8b949e]">GitHub:</span>
+                        <a href="https://github.com/abfdev" target="_blank" class="text-[#58a6ff] underline hover:text-white transition ml-1">github.com/abfdev</a>
                     </p>
                 </div>
             `;
@@ -277,7 +325,6 @@
                     echo.textContent = '';
                     return;
                 }
-                // If user types regular characters, exit selectMode
                 selectMode = false;
             }
 
